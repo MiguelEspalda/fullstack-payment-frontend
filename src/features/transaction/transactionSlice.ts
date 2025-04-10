@@ -12,6 +12,7 @@ interface PaymentData {
     name: string;
     address: string;
     city: string;
+    email: string,
     cardNumber: string;
     expiry: string;
     cvc: string;

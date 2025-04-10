@@ -12,6 +12,7 @@ export default function PaymentInfoPage() {
         name: '',
         address: '',
         city: '',
+        email: '',
         cardNumber: '',
         expiry: '',
         cvc: '',
@@ -39,6 +40,7 @@ export default function PaymentInfoPage() {
         if (!form.name) newErrors.name = 'Requerido';
         if (!form.address) newErrors.address = 'Requerido';
         if (!form.city) newErrors.city = 'Requerido';
+        if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = 'Correo inválido';
         if (!/^\d{16}$/.test(form.cardNumber)) newErrors.cardNumber = 'Número inválido';
         if (!/^\d{3}$/.test(form.cvc)) newErrors.cvc = 'CVC inválido';
         if (!/^\d{2}\/\d{2}$/.test(form.expiry)) newErrors.expiry = 'Formato mm/yy';
@@ -90,6 +92,16 @@ export default function PaymentInfoPage() {
             onChange={handleChange}
             />
             {errors.city && <p className="text-red-500 text-sm">{errors.city}</p>}
+
+            <input
+            type="email"
+            name="email"
+            placeholder="Correo electrónico"
+            className="w-full p-2 border rounded"
+            value={form.email}
+            onChange={handleChange}
+            />
+            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
             <input
             type="text"
