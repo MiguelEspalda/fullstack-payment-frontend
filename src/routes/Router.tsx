@@ -4,6 +4,7 @@ import PaymentInfoPage from '../pages/PaymentInfoPage';
 import SummaryPage from '../pages/SummaryPage';
 import StatusPage from '../pages/StatusPage';
 
+
 export default function AppRouter() {
     return (
         <BrowserRouter>
